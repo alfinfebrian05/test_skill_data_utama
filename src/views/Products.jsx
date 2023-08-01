@@ -15,6 +15,7 @@ export default function Products() {
     axiosClient
       .get(`/products?page=${currPage}`)
       .then(({ data }) => {
+        console.log(data);
         setLoading(false);
         setProducts(data);
       })
@@ -34,7 +35,7 @@ export default function Products() {
 
     if (confirmDelete) {
       axiosClient
-        .delete("/products/" + id)
+        .delete("/products" + id)
         .then(({ data }) => {
           setProducts(data);
           setNotification("Success delete product");

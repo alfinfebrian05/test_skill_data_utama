@@ -11,6 +11,22 @@ export default function Signup() {
   const passwordRef = useRef();
   const passwordConfirmationRef = useRef();
 
+  const getTodayTimestamp = () => {
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    var hours = today.getHours();
+    var minute = today.getMinutes();
+    var second = today.getSeconds();
+
+    return (
+      year + "-" + month + "-" + day + " " + hours + ":" + minute + ":" + second
+    );
+  };
+
+  console.log(getTodayTimestamp());
+
   const { setUser, setToken } = useStateContext();
 
   const formOnSubmit = (e) => {
