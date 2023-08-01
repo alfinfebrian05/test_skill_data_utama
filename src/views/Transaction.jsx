@@ -102,8 +102,8 @@ export default function Transaction() {
           </tbody>
         ) : searchedData ? (
           <tbody>
-            {searchedData?.map((transaction) => (
-              <tr key={transaction.reference_no}>
+            {searchedData?.map((transaction, id) => (
+              <tr key={id}>
                 <td>{tableIdx++}</td>
                 <td>{transaction.reference_no}</td>
                 <td>{parseInt(transaction.price)}</td>
@@ -115,8 +115,8 @@ export default function Transaction() {
           </tbody>
         ) : (
           <tbody>
-            {transactions?.data?.map((transaction) => (
-              <tr key={transaction.reference_no}>
+            {transactions?.data?.map((transaction, id) => (
+              <tr key={transaction}>
                 <td>{tableIdx++}</td>
                 <td>{transaction.reference_no}</td>
                 <td>{parseInt(transaction.price)}</td>
